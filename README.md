@@ -1,9 +1,10 @@
 # Запуск проекта
-1. Создать venv: python3 -m venv <venv_name>
-2. Активировать venv: source venv_name/bin/activate
-3. Устанавливаем зависимости: pip install -r requirements.txt
-4. Создать DB: python manage.py migrate
-5. Заполнить DB значениями: python manage.py loaddata myapp/fixtures/countries.json
+1. Создать venv: `python3 -m venv <venv_name>`
+2. Активировать venv: `source venv_name/bin/activate`
+3. Устанавливаем зависимости: `pip install -r requirements.txt`
+4. Создать DB: `python manage.py makemigrations` затем `python manage.py migrate`
+5. Заполнить DB значениями: `python manage.py loaddata myapp/fixtures/countries.json`
+
 
 # Check-list
 - [ ] Так помечаем невыполненные задания
