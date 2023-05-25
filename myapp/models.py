@@ -1,13 +1,15 @@
 from django.db import models
 import json
 
-
+# FIXME: в этом файле должны быть ТОЛЬКО модели, прочие функции размещать тут не стоит
 with open('countries.json') as file:
     lands_and_langs = json.load(file)
 
 class Language(models.Model):
+    # FIXME: может свойство стоило назвать "name"? Это же название языка.
     language = models.CharField(max_length=35)
 
+# FIXME: форматируйте код согласно PEP-8
 # Create your models here.
 class Country (models.Model):
    country = models.CharField(max_length=35)

@@ -3,6 +3,7 @@ import json
 from myapp.models import Country, Language
 
 
+# FIXME: работа происходит через БД, стоит удалить получение информации из файла. Не оставляйте мусор в проекте.
 # Create your views here.
 with open('countries.json') as file:
     lands_and_langs = json.load(file)
