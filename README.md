@@ -4,6 +4,8 @@
 3. Устанавливаем зависимости: pip install -r requirements.txt
 4. Создать DB: python manage.py migrate
 5. Заполнить DB значениями: python manage.py loaddata myapp/fixtures/countries.json
+6. Полезные команды: python manage.py dumpdata myapp > myapp/fixtures/countries.json
+
 
 
 # Check-list

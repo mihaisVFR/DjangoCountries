@@ -24,17 +24,20 @@ def country(request, name=""):
                }
     return render(request, "country_page.html", context)
 
+def language(request,name=""):
+    lang = Language.objects.get(language=name)
+    #items = Item.objects.filter(colors__name='green')
+    countries = lang.country_set.all()
+    context = {"countries": countries,
+               "language": lang
+               }
+    return render(request, "language_page.html", context)
 
 def languages(request):
     langs = Language.objects.all()
     context = {"langs": langs}
     return render(request, "languages.html", context)
 
-
-def del_from_db(cls):
-    cls.objects.all().delete()
-
-#del_from_db(Language)
 
 
 

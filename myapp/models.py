@@ -19,18 +19,22 @@ def add_country():
        count = Country(country=land_and_lang["country"])
        count.save()
 
-
-
-def add_language():
+def add_languages():
     langs_unique = []
+    for land_and_lang in lands_and_langs:
+        for langs in land_and_lang["languages"]:
+
+            if langs not in langs_unique:
+                langs_unique.append(langs)
+                language = Language(language=langs)
+                language.save()
+
+def add_communications():
     for land_and_lang in lands_and_langs:
         land = Country.objects.get(country=land_and_lang["country"])
         for langs in land_and_lang["languages"]:
-            if langs not in langs_unique:
-                langs_unique.append(langs)
-                lang = Language(language=langs)
-                lang.save()
-                land.languages.add(lang)
+            lang = Language.objects.get(language=langs)
+            land.languages.add(lang)
 
 
 

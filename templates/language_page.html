@@ -9,11 +9,11 @@
     </style>
 </head>
 <body>
-<h2>Список языков</h2>
-<a href="/">Назад</a>
+<h2>{{ language.language }}</h2>
+<a href="/languages/">Назад</a>
 <ol>
-{% for lang in langs %}
-     <li><a href="/languages/{{ lang.language }}">{{ lang.language }}</a></li>
+{% for country in countries %}
+    <li>{{ country.country }}</li>
 {% endfor %}
 </ol>
 </body>
