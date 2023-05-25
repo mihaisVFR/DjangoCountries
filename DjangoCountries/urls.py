@@ -19,10 +19,10 @@ from django.urls import path
 from myapp import views
 
 urlpatterns = [
-    path('', views.home),
-    path('countries-list/', views.countries),
-    path('countries-list/<str:name>/', views.country),
-    path('languages/<str:name>/', views.language),
-    path('languages/', views.languages),
+    path('', views.home, name="home"),
+    path('countries-list/', views.countries, name="countries_list"),
+    path('countries-list/<str:name>/', views.country, name="country_page"),
+    path('languages/<str:name>/', views.language, name="language_page"),
+    path('languages/', views.languages, name="languages_list"),
     ]
 

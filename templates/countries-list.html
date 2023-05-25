@@ -1,20 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="ru">
-<head>
-    <meta charset="utf8">
-    <title>Title</title>
-    <style type="text/css">
-    html {background: #ffc;}
-    body {text-align: left;}
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 <h2>Список стран</h2>
 <a href="/">Назад</a>
 <ol>
     {% for land in countries %}
-    <li><a href="/countries-list/{{ land.country }}">{{ land.country }}</a></li>
+    <li><a href="{% url 'countries_list' %}{{ land.country }}">{{ land.country }}</a></li>
     {% endfor %}
 </ol>
-</body>
-</html>
+{% endblock %}

@@ -1,17 +1,15 @@
-<!DOCTYPE HTML>
-<html lang="ru">
-<head>
-    <meta charset="utf8">
-    <title>Title</title>
-    <style type="text/css">
-    html {background: #ffc;}
-    body {text-align: center;}
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block style %}
+ <style type="text/css">
+ html {background: #ffc;}
+ body {text-align: center;}
+ </style>
+{% endblock %}
+{% block home %}
+{% endblock %}
+{% block content %}
     <h1>Приветствуем на главной стрвнице сайта</h1><br>
     <b>Здесь можно узнать на каких
-    <a href="/languages/">языках</a> говорят в разных
-    <a href="/countries-list/">странах</a></b>
-</body>
-</html>
+    <a href="{% url 'languages_list' %}">языках</a> говорят в разных
+    <a href="{% url 'countries_list' %}">странах</a></b>
+{% endblock %}
