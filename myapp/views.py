@@ -1,13 +1,8 @@
-from django.shortcuts import render, HttpResponse
-import json
+from django.shortcuts import render
 from myapp.models import Country, Language
 
 
 # Create your views here.
-with open('countries.json') as file:
-    lands_and_langs = json.load(file)
-
-
 def home(request):
     return render(request, "index.html")
 
@@ -29,8 +24,7 @@ def country(request, name=""):
 
 
 def language(request, name=""):
-    lang = Language.objects.get(language=name)
-    #items = Item.objects.filter(colors__name='green')
+    lang = Language.objects.get(name=name)
     countries = lang.country_set.all()
     context = {"countries": countries,
                "language": lang
@@ -42,7 +36,3 @@ def languages(request):
     langs = Language.objects.all()
     context = {"langs": langs}
     return render(request, "languages.html", context)
-
-
-
-

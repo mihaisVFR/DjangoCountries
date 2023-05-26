@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
-<h2>Список языков</h2>
-<a href="/">Назад</a>
-<ol>
-{% for lang in langs %}
-     <li><a href="{% url 'languages_list' %}{{ lang.language }}">{{ lang.language }}</a></li>
-{% endfor %}
-</ol>
+     <h2>Список языков</h2>
+     <a href="{% url 'home' %}">Назад</a>
+     <ol>
+     {% for lang in langs %}
+          <li><a href="{% url 'languages_list' %}{{ lang.name }}">{{ lang.name }}</a></li>
+     {% endfor %}
+     </ol>
 {% endblock %}
